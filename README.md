@@ -35,5 +35,5 @@ it is in its best shape for the 2016 season. The following features are tentativ
 
 ##Conclusion/Notes
 Please feel free to contribute and send pull requests. If you have any problems or find
-a bug, please rasise an issue. This project is open source and is meant to be used by all teams. It is currently under development
+a bug, please rasise an issue. This project is being actively devloped and maintained by
 by members of [FRC 1923: The Midknight Inventors](http://firstrobotics1923.org/)
