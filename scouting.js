@@ -2,7 +2,7 @@ var http = require('http');
 var u = require('underscore');
 
 //given team number, get all events the team played at
-function getEvents(teamNum, callBack) {
+function getEvents(teamNum) {
   teamNumber = teamNum;
   var eventInfo;
 
@@ -19,10 +19,9 @@ function getEvents(teamNum, callBack) {
       str += chunk;
     });
 
-
     response.on('end', function() {
       eventInfo = JSON.parse(str);
-      callBack(eventInfo, teamNum, getSpecificMatches);
+      getMatchData(eventInfo, teamNum);
     });
   }
 
@@ -30,7 +29,7 @@ function getEvents(teamNum, callBack) {
 }
 
 //given an array of all the events the team played at, get a list of all the matches
-function getMatchData(eventInfo, teamNum, callBack) {
+function getMatchData(eventInfo, teamNum) {
   var options = {
     host: 'www.thebluealliance.com',
     path: '/api/v2/event/<event key>/matches?X-TBA-App-Id=personal:scouting:v01'
@@ -52,7 +51,7 @@ function getMatchData(eventInfo, teamNum, callBack) {
 
       response.on('end', function() {
         var matchInfo = JSON.parse(str);
-        callBack(matchInfo, teamNum);
+        getSpecificMatches(matchInfo, teamNum);
       });
     }
 
@@ -78,6 +77,7 @@ function getSpecificMatches(matchData, teamNum) {
     if (currentMatchAlliances['red']['teams'].indexOf(teamNum) >= 0 || currentMatchAlliances['blue']['teams'].indexOf(teamNum) >= 0) {
 
       setMatchesGlobal(matchData[matchNum]);
+
       /*
       console.log(matchData[matchNum].comp_level + " " + matchData[matchNum].match_number)
       console.log(currentMatchAlliances);
@@ -86,7 +86,6 @@ function getSpecificMatches(matchData, teamNum) {
 
     }
   }
-  //console.log();
   console.log('.');
 }
 
@@ -97,20 +96,23 @@ function analyze() {
     averageQA = 0,
     averageAuton = 0,
     averageFouls = 0,
-    totalNulls = 0;
+    totalNulls = 0,
+    averagePlayoff = 0,
+    totalPlayoffs =0;
 
   for (var matchNum = 0; matchNum < matches.length; matchNum++) {
 
     var currentMatch = matches[matchNum];
-    var currentMatchAlliances = matches[matchNum].alliances;
+    var currentMatchAlliances = currentMatch['alliances'];
     var alliance = "";
+
     if (currentMatchAlliances['red']['teams'].indexOf(teamNumber) >= 0) {
       alliance = "red";
     } else {
       alliance = "blue";
     }
 
-    if (currentMatchAlliances[alliance]['score'] > 0) {
+    if (currentMatchAlliances[alliance]['score'] >= 0) {
       if (currentMatchAlliances[alliance]['score'] > highest) {
         highest = currentMatchAlliances[alliance]['score'];
       }
@@ -119,7 +121,12 @@ function analyze() {
         lowest = currentMatchAlliances[alliance]['score'];
       }
 
-      averageQA += currentMatchAlliances[alliance]['score'];
+      if(currentMatch.comp_level === 'qm'){
+        averageQA += currentMatchAlliances[alliance]['score'];
+      } else{
+        averagePlayoff += currentMatchAlliances[alliance]['score'];
+        totalPlayoffs++;
+      }
 
       averageAuton += matches[matchNum]['score_breakdown'][alliance]['auto'];
 
@@ -130,7 +137,11 @@ function analyze() {
     }
   }
 
-  averageQA /= matches.length - totalNulls;
+  if(totalPlayoffs !== 0){
+    averagePlayoff /= totalPlayoffs;
+  }
+
+  averageQA /= matches.length - totalNulls - totalPlayoffs;
   averageFouls /= matches.length - totalNulls;
   averageAuton /= matches.length - totalNulls;
 
@@ -138,20 +149,55 @@ function analyze() {
   console.log("Highest Number of points: " + highest);
   console.log("Lowest Number of points: " + lowest);
   console.log("Average QA: " + averageQA);
+  console.log("Average Playoff Points (If Applicable): " + averagePlayoff);
   console.log("Average Auton points: " + averageAuton);
   console.log("Average Foul points: " + averageFouls);
 }
 
 //main function
-function getTeamData(teamNum) {
-  var eventInfo = getEvents(teamNum, getMatchData);
+function getTeamSeasonData(teamNum) {
+  var eventInfo = getEvents(teamNum);
   u.delay(analyze, 1000)
 }
 
-module.exports = {
-  getData: function(teamNumb){
-    getTeamData(teamNumb)
+function getSpecificEventMatchData(teamNumb, eventKey){
+  teamNumber = teamNumb;
+  var options = {
+    host: 'www.thebluealliance.com',
+    path: '/api/v2/event/2015' + eventKey+ '/matches?X-TBA-App-Id=personal:scouting:v01'
+  };
+
+  callback = function(response) {
+    var str = '';
+
+
+    response.on('data', function(chunk) {
+      str += chunk;
+    });
+
+    response.on('end', function() {
+      matchInfo = JSON.parse(str);
+      getSpecificMatches(matchInfo, teamNumb);
+    });
   }
+
+  http.request(options, callback).end();
+
 }
 
-//getTeamData('frc1923');
+function getTeamEventData(teamNumb, eventKey){
+  getSpecificEventMatchData(teamNumb, eventKey);
+  u.delay(analyze, 1000);
+}
+
+
+module.exports = {
+  getSeasonData: function(teamNumb){
+    getTeamSeasonData(teamNumb)
+  },
+
+  getEventData: function(teamNumb, eventKey){
+    getTeamEventData(teamNumb, eventKey);
+  }
+
+}
