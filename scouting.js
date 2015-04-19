@@ -91,14 +91,14 @@ function getSpecificMatches(matchData, teamNum) {
 
 //analyze all the matches and print some basic stats
 function analyze() {
-    var highest = 0,
+  var highest = 0,
     lowest = 1000000000,
     averageQA = 0,
     averageAuton = 0,
     averageFouls = 0,
     totalNulls = 0,
     averagePlayoff = 0,
-    totalPlayoffs =0;
+    totalPlayoffs = 0;
 
   for (var matchNum = 0; matchNum < matches.length; matchNum++) {
 
@@ -121,9 +121,9 @@ function analyze() {
         lowest = currentMatchAlliances[alliance]['score'];
       }
 
-      if(currentMatch.comp_level === 'qm'){
+      if (currentMatch.comp_level === 'qm') {
         averageQA += currentMatchAlliances[alliance]['score'];
-      } else{
+      } else {
         averagePlayoff += currentMatchAlliances[alliance]['score'];
         totalPlayoffs++;
       }
@@ -132,12 +132,12 @@ function analyze() {
 
       averageFouls += matches[matchNum]['score_breakdown'][alliance]['foul'];
 
-    } else{
+    } else {
       totalNulls++;
     }
   }
 
-  if(totalPlayoffs !== 0){
+  if (totalPlayoffs !== 0) {
     averagePlayoff /= totalPlayoffs;
   }
 
@@ -146,6 +146,7 @@ function analyze() {
   averageAuton /= matches.length - totalNulls;
 
   console.log('Analytics')
+  console.log('Team Name: ' + teamName);
   console.log("Highest Number of points: " + highest);
   console.log("Lowest Number of points: " + lowest);
   console.log("Average QA: " + averageQA);
@@ -157,14 +158,15 @@ function analyze() {
 //main function
 function getTeamSeasonData(teamNum) {
   var eventInfo = getEvents(teamNum);
+  getTeamName(teamNum);
   u.delay(analyze, 1000)
 }
 
-function getSpecificEventMatchData(teamNumb, eventKey){
+function getSpecificEventMatchData(teamNumb, eventKey) {
   teamNumber = teamNumb;
   var options = {
     host: 'www.thebluealliance.com',
-    path: '/api/v2/event/2015' + eventKey+ '/matches?X-TBA-App-Id=personal:scouting:v01'
+    path: '/api/v2/event/2015' + eventKey + '/matches?X-TBA-App-Id=personal:scouting:v01'
   };
 
   callback = function(response) {
@@ -185,18 +187,48 @@ function getSpecificEventMatchData(teamNumb, eventKey){
 
 }
 
-function getTeamEventData(teamNumb, eventKey){
+var teamName;
+
+function setNameGlobal(name) {
+  teamName = name;
+}
+
+function getTeamName(teamNumb) {
+  var options = {
+    host: 'www.thebluealliance.com',
+    path: '/api/v2/team/' + teamNumb + '?X-TBA-App-Id=personal:scouting:v01'
+  };
+
+  callback = function(response) {
+    var str = '';
+
+
+    response.on('data', function(chunk) {
+      str += chunk;
+
+    });
+
+    response.on('end', function() {
+      var name = JSON.parse(str);
+      setNameGlobal(name.nickname);
+    });
+  }
+
+  http.request(options, callback).end();
+}
+
+function getTeamEventData(teamNumb, eventKey) {
   getSpecificEventMatchData(teamNumb, eventKey);
+  getTeamName(teamNumb);
   u.delay(analyze, 1000);
 }
 
-
 module.exports = {
-  getSeasonData: function(teamNumb){
+  getSeasonData: function(teamNumb) {
     getTeamSeasonData(teamNumb)
   },
 
-  getEventData: function(teamNumb, eventKey){
+  getEventData: function(teamNumb, eventKey) {
     getTeamEventData(teamNumb, eventKey);
   }
 
