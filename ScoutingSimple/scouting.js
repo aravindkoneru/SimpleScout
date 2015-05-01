@@ -70,7 +70,7 @@ function setMatchesGlobal(matchInfo) {
 //given an array of matches, print the relevant match data and add to global
 //this does not print all the matches by default, but it can and also only print certain matches
 function getSpecificMatches(matchData, teamNum) {
-  //console.log('Event: ' + matchData[0].event_key);
+//  console.log('Event: ' + matchData[0].event_key);
   for (var matchNum = 0; matchNum < matchData.length; matchNum++) {
 
     var currentMatchAlliances = matchData[matchNum].alliances;
@@ -86,6 +86,7 @@ function getSpecificMatches(matchData, teamNum) {
 
     }
   }
+  //console.log();
   console.log('.');
 }
 

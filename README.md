@@ -11,8 +11,7 @@ An FRC scouting program written in node.js and powered by [The Blue Alliance API
 
 ##Instructions
 
-Run input.js and enter the team number that you want to search for. Within a few seconds,
-you will have a comprehensive list of stats of that team.
+Currently still under development, so no solid instructions yet.
 
 ##Known Bugs/Issues
 
@@ -20,6 +19,7 @@ you will have a comprehensive list of stats of that team.
 issue.
 * There is no validation at this point to determine if the team number is actually valid. Entering a non-existant team or
 a team in the wrong format will throw a nasty error
+* You will require an `authkey` or `token` in order to run the complex version of the code. You can request one [here](https://usfirst.collab.net/sf/sfmain/do/viewProject/projects.first_community_developers?_message=1429471256751)
 
 ##Goals/Future Work
 
@@ -33,6 +33,10 @@ it is in its best shape for the 2016 season. The following features are tentativ
 * Creating a website or phone app for easier access
 * Display more detailed status using the [FIRST API](http://docs.frcevents.apiary.io/)
 
+##Updates
+
+* 5/1/2015: (Finally) Gained access to the FIRST api and began development on a more concise scouting system
+
 ##Conclusion/Notes
 Please feel free to contribute and send pull requests. If you have any problems or find
-a bug, please rasise an issue. This project is being actively devloped and maintained by members of [FRC 1923: The Midknight Inventors](http://firstrobotics1923.org/)
+a bug, please rasise an issue. This project is being actively developed and maintained by members of [FRC 1923: The Midknight Inventors](http://firstrobotics1923.org/)
