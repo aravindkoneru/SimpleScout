@@ -1,10 +1,11 @@
 var http = require('http');
 var file = require('read-file');
 var u = require('underscore');
+var analyze = require('../AnalyzeData/analyze');
 
 
 //do not change this
-var auth = file.readFileSync('authkey.txt');
+var auth = file.readFileSync('../authkey.txt');
 
 var teamData = {};
 
@@ -96,4 +97,6 @@ function storeScoreData(teamNumber, eventCode, parsedScoreData){
 
 scrapeTeamStats(1923);
 var log = u.bind(console.log, console);
-u.delay(log, 3000, teamData);
+u.delay(log, 1000, teamData);
+var args = [teamData, 'litterPoints'];
+u.delay(analyze.sDev, 2000, args);
