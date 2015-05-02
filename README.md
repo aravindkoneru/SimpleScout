@@ -1,5 +1,5 @@
 # SimpleScout
-An FRC scouting program written in node.js and powered by [The Blue Alliance API](http://www.thebluealliance.com/apidocs)
+An FRC scouting program written in node.js and powered by [The Blue Alliance API](http://www.thebluealliance.com/apidocs) and the [FIRST API](http://docs.frcevents.apiary.io/)
 
 ## Dependencies
 
@@ -38,7 +38,8 @@ it is in its best shape for the 2016 season. The following features are tentativ
 ##Updates
 
 * 5/1/2015: (Finally) Gained access to the FIRST api and began development on a more concise scouting system
+* 5/2/2015: Basic functionality for scraping team data from the FIRST api is complete (much more data gathered than from the blue alliance)
 
 ##Conclusion/Notes
 Please feel free to contribute and send pull requests. If you have any problems or find
-a bug, please rasise an issue. This project is being actively developed by me on behalf of the members of [FRC 1923: The Midknight Inventors](http://firstrobotics1923.org/)
+a bug, please rasise an issue. This project is being actively developed on behalf of [FRC 1923: The Midknight Inventors](http://firstrobotics1923.org/)
