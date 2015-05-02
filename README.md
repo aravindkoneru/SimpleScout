@@ -17,7 +17,7 @@ Currently still under development, so no solid instructions yet.
 
 ##Known Bugs/Issues
 
-* Sometimes not all the data is recieved but the calculations are still done. Just running the program again usually fixes the
+* Sometimes not all the data is received but the calculations are still done. Just running the program again usually fixes the
 issue.
 * There is no validation at this point to determine if the team number is actually valid. Entering a non-existant team or
 a team in the wrong format will throw a nasty error
@@ -26,7 +26,7 @@ a team in the wrong format will throw a nasty error
 ##Goals/Future Work
 
 I am a novice when it comes to asynchronous functions and js in general. If anybody would like to help clean up the code and make
-more efficient, I would really aprreciate it. None, the less, I will be developing this project throughout the year to ensure that
+more efficient, I would really appreciate it. None the less, I will be developing this project throughout the year to ensure that
 it is in its best shape for the 2016 season. The following features are tentatively being thought about:
 
 * Validation in all aspects of the code
