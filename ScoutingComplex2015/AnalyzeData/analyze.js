@@ -3,6 +3,17 @@
 //is stored under the division as opposed to the header.
 
 //this returns the sample standard deviation (s)
+function removeUndef(statVals){
+  for(var x = 0; x < statVals.length; x++){
+    if(typeof statVals[x] === 'undefined'){
+      statVals.splice(x, 1);
+      console.warn('found an undefined value while calculating standard dev.')
+    }
+  }
+
+  return statVals;
+}
+
 function statStandardDev(args){
   var teamData = args[0];
   var someStat = args[1];
@@ -16,12 +27,7 @@ function statStandardDev(args){
 
   var mean = 0;
 
-  for(var x = 0; x < statVals.length; x++){
-    if(typeof statVals[x] === 'undefined'){
-      statVals.splice(x, 1);
-      console.warn('found an undefined value while calculating standard dev.')
-    }
-  }
+  statVals = removeUndef(statVals);
 
   for(var x = 0; x < statVals.length; x++){
     mean += statVals[x];
@@ -42,6 +48,31 @@ function statStandardDev(args){
   return sDev;
 }
 
+//returns the average stat for a team
+function averageStat(args){
+  var teamData = args[0];
+  var stat = args[1];
+
+  statVals = [];
+
+  for(var key in teamData['events']){
+    if(teamData['events'].hasOwnProperty(key)){
+      statVals.push(teamData['events'][key]['raw_stats'][stat]);
+    }
+  }
+
+  statVals = removeUndef(statVals);
+
+  var avg = 0;
+
+  for(var x = 0; x < statVals.length; x++){
+    avg += statVals[x];
+  }
+
+  return avg /= statVals.length;
+}
+
 module.exports = {
-  sDev: statStandardDev
+  sDev: statStandardDev,
+  avgStat: averageStat
 }
