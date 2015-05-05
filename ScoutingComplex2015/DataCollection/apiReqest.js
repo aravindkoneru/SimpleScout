@@ -48,6 +48,8 @@ function storeEventData(teamNumber, parsedEventData){
     }
   }
 
+  teamData['analytics'] = {};
+
   for(var eventCode in teamData['events']){
     if(teamData['events'].hasOwnProperty(eventCode)){
       getRawScores(teamNumber, eventCode);
@@ -127,5 +129,4 @@ function storeMatchData(eventCode, rawMatchesObject){
 scrapeTeamStats(1923);
 var log = u.bind(console.log, console);
 u.delay(log, 2500, teamData);
-//var args = [teamData, 'litterPoints'];
-//u.delay(analyze.sDev, 2000, args);
+u.delay(analyze.calcData, 2000, teamData);

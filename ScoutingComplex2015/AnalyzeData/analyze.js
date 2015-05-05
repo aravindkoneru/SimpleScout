@@ -3,6 +3,11 @@
 //is stored under the division as opposed to the header.
 
 //this returns the sample standard deviation (s)
+function analyzeData(teamData){
+  getStandDev(teamData);
+  getAvgStats(teamData);
+}
+
 function removeUndef(statVals){
   for(var x = 0; x < statVals.length; x++){
     if(typeof statVals[x] === 'undefined'){
@@ -14,9 +19,18 @@ function removeUndef(statVals){
   return statVals;
 }
 
-function statStandardDev(args){
-  var teamData = args[0];
-  var someStat = args[1];
+function getStandDev(teamData){
+  var stats = ['qualAverage', 'autoPoints', 'containerPoints', 'coopertitionPoints', 'litterPoints', 'totePoints'];
+  teamData['analytics']['standard_deviation'] = {};
+
+  for(var x = 0; x < stats.length; x++){
+    var dev = statStandardDev(teamData, stats[x]);
+
+    teamData['analytics']['standard_deviation'][stats[x]] = dev;
+  }
+}
+
+function statStandardDev(teamData, someStat){
 
   var statVals = [];
   for(var key in teamData['events']){
@@ -44,15 +58,22 @@ function statStandardDev(args){
   sDev /= statVals.length-1;
   sDev = Math.sqrt(sDev);
 
-  console.log(sDev);
   return sDev;
 }
 
-//returns the average stat for a team
-function averageStat(args){
-  var teamData = args[0];
-  var stat = args[1];
+function getAvgStats(teamData){
+  var stats = ['qualAverage', 'autoPoints', 'containerPoints', 'coopertitionPoints', 'litterPoints', 'totePoints'];
+  teamData['analytics']['average'] = {};
 
+  for(var x = 0; x < stats.length; x++){
+    var dev = averageStat(teamData, stats[x]);
+
+    teamData['analytics']['average'][stats[x]] = dev;
+  }
+}
+
+//returns the average stat for a team
+function averageStat(teamData, stat){
   statVals = [];
 
   for(var key in teamData['events']){
@@ -73,6 +94,7 @@ function averageStat(args){
 }
 
 module.exports = {
-  sDev: statStandardDev,
-  avgStat: averageStat
+  calcData: analyzeData,
+  sDev: getStandDev,
+  avgStat: getAvgStats
 }
