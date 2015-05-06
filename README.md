@@ -11,6 +11,8 @@ An FRC scouting program written in node.js and powered by [The Blue Alliance API
 
 [read-file](https://www.npmjs.com/package/read-file) `npm i read-file --save`
 
+[xlsx.js](https://www.npmjs.com/package/xlsx) `npm install xlsx`
+
 ##Instructions
 
 Currently still under development, so no solid instructions yet.
