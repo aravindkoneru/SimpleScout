@@ -3,7 +3,7 @@
 **Problem:** Scouting is the process of collecting and analyzing team data in order
 to determine ideal alliance partners. Scouting is necessary and must be done effectively
 in order to remain competitive; however, the inherent problem with the scouting process is that
-it is incredibly arduous and does not always yield useful data. Some times are meticulous in their
+it is incredibly arduous and does not always yield useful data. Some teams are meticulous in their
 scouting and collect accurate data that they later use to develop their strategy. These teams are entitled to their
 scouting data as it is the result of their hard work, however, smaller teams or teams that don't have the ability
 to collect accurate data are left at a disadvantage in regards to their strategy.
