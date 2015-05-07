@@ -3,42 +3,6 @@ var http = require('http');
 var file = require('read-file')
 var auth = file.readFileSync('../authkey.txt');
 
-var matchSchema = {
-  interaction:{
-    totes: "",
-    bins: ""
-  },
-  actionsAttempted:{
-    robotSet: "",
-    containerSet: "",
-    toteSet: "",
-    stackedToteSet: ""
-  },
-  actionsCompleted:{
-    robotSet: "",
-    containerSet: "",
-    toteSet: "",
-    stackedToteSet: ""
-  },
-  teleOp:{
-    totesStacked: "",
-    totesHP: "",
-    totesLandfill: ""
-  },
-  bins:{
-    size1: "",
-    size2: "",
-    size3: "",
-    size4: "",
-    size5: "",
-    size6: ""
-  },
-  coop: {
-    obtained: "",
-    step: ""
-  }
-};
-
 //get all the teams attending an event
 function getTeams(eventCode){
   var options = {
@@ -99,7 +63,7 @@ function generateExcelBook(teamNumbers){
 }
 
 function getTemplate(){
-  var wb = xlsx.readFile('template.xlsx');
+  var wb = xlsx.readFile('sample_files/template.xlsx');
   var ws = wb.Sheets['Sheet1'];
   ws['!cols'] = getCols(ws);
   return ws;
