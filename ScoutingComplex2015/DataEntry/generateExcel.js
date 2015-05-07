@@ -3,6 +3,42 @@ var http = require('http');
 var file = require('read-file')
 var auth = file.readFileSync('../authkey.txt');
 
+var matchSchema = {
+  interaction:{
+    totes: "",
+    bins: ""
+  },
+  actionsAttempted:{
+    robotSet: "",
+    containerSet: "",
+    toteSet: "",
+    stackedToteSet: ""
+  },
+  actionsCompleted:{
+    robotSet: "",
+    containerSet: "",
+    toteSet: "",
+    stackedToteSet: ""
+  },
+  teleOp:{
+    totesStacked: "",
+    totesHP: "",
+    totesLandfill: ""
+  },
+  bins:{
+    size1: "",
+    size2: "",
+    size3: "",
+    size4: "",
+    size5: "",
+    size6: ""
+  },
+  coop: {
+    obtained: "",
+    step: ""
+  }
+};
+
 //get all the teams attending an event
 function getTeams(eventCode){
   var options = {
@@ -39,7 +75,7 @@ function genTeamArray(teamData){
     teamNumbers.push(currentTeam);
   }
 
-  console.log(teamNumbers);
+  //console.log(teamNumbers);
   generateExcelBook(teamNumbers);
 }
 
@@ -52,10 +88,48 @@ function Workbook() {
 
 //generate excel file for event
 function generateExcelBook(teamNumbers){
-  
+  var exportBook = new Workbook();
+
+  for(var x = 0; x < teamNumbers.length; x++){
+    var current = teamNumbers[x];
+    exportBook.SheetNames.push("" + current);
+    exportBook.Sheets["" + current] = getTemplate();
+  }
+  makeFile(exportBook);
 }
 
+function getTemplate(){
+  var wb = xlsx.readFile('template.xlsx');
+  var ws = wb.Sheets['Sheet1'];
+  ws['!cols'] = getCols(ws);
+  return ws;
+}
 
+function getCols(ws){
+  var range = xlsx.utils.decode_range(ws['!ref']);
+  var wcols = [];
 
+  for(var col = range.s.c; col <= range.e.c; col++){
+    var smallest = 0;
+    for(var row = range.s.r; row <= range.e.r; row++){
+      var cellRef = xlsx.utils.encode_cell({r: row, c: col});
+      var cell = ws[cellRef];
+      //console.log(cell);
+      if(typeof cell !== 'undefined'){
+        cell = cell.v;
+        //console.log(cell);
+        if(cell.length > smallest) smallest = cell.length;
+      }
+    }
+    if(smallest !== 0) wcols.push({wch: smallest});
+  }
 
-getTeams('NJFLA')
+  //console.log(wcols);
+  return wcols;
+}
+
+function makeFile(exportBook){
+  xlsx.writeFile(exportBook, 'scouting.xlsx');
+}
+
+getTeams('MRCMP')
