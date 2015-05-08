@@ -75,6 +75,7 @@ function getTeamPayload(excelBook, teamNumber){
     payload.push(JSON.parse(JSON.stringify(matchSchema)));
     setDefault(matchSchema);
   }
+  console.log(payload)
   return payload;
 }
 
