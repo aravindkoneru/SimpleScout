@@ -13,6 +13,8 @@ An FRC scouting program written in node.js and powered by [The Blue Alliance API
 
 [xlsx.js](https://www.npmjs.com/package/xlsx) `npm install xlsx`
 
+[plotly](https://plot.ly/feed/) `npm install plotly`
+
 ##Instructions
 
 Currently still under development, so no solid instructions yet.
@@ -42,6 +44,7 @@ it is in its best shape for the 2016 season. The following features are tentativ
 * 5/1/2015: (Finally) Gained access to the FIRST api and began development on a more concise scouting system
 * 5/2/2015: Basic functionality for scraping team data from the FIRST api is complete (much more data gathered than from the blue alliance)
 * 5/5/2015: Began working on bulk data entry (excel) and auto generation of excel files
+* 5/7/2015: Began working on the graphs and other analytics
 
 ##Conclusion/Notes
 Please feel free to contribute and send pull requests. If you have any problems or find

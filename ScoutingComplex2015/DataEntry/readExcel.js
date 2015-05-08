@@ -1,4 +1,5 @@
 var xlsx = require('xlsx');
+var graphs = require('../AnalyzeData/graphData.js');
 
 var matchSchema = {
   interaction:{
@@ -61,11 +62,11 @@ function getTeamPayload(excelBook, teamNumber){
         setValue(matchSchema, keySet[currentPos], 'undefined');
         currentPos++;
       } else if(typeof cell !== 'undefined' && cell.t === 'n'){
-        console.log(keySet[currentPos] + ' : ' + cell.v);
+        //console.log(keySet[currentPos] + ' : ' + cell.v);
         setValue(matchSchema, keySet[currentPos], cell.v);
         currentPos++;
       } else if(typeof cell !== 'undefined' && cell.t === 's'){
-        console.log(keySet[currentPos] + ' : ' + cell.v);
+        //console.log(keySet[currentPos] + ' : ' + cell.v);
         setValue(matchSchema, keySet[currentPos], true);
         currentPos++;
       }
@@ -122,6 +123,6 @@ function combine(a, b){
 }
 
 
-//console.log(matchSchema);
+//@TODO:time for some server backend?
 
-console.log(genInfo("sample_files/scouting.xlsx", 11));
+graphs.graphBins(genInfo("sample_files/scouting.xlsx", 11), 11);
