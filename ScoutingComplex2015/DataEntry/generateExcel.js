@@ -2,6 +2,7 @@ var xlsx = require('xlsx');
 var http = require('http');
 var file = require('read-file')
 var auth = file.readFileSync('../authkey.txt');
+var mkdirp = require('mkdirp');
 
 //get all the teams attending an event
 function getTeams(eventCode){
@@ -41,6 +42,7 @@ function genTeamArray(teamData){
 
   //console.log(teamNumbers);
   generateExcelBook(teamNumbers);
+  createFolders(teamNumbers);
 }
 
 //workBook class
@@ -90,6 +92,19 @@ function getCols(ws){
 
   //console.log(wcols);
   return wcols;
+}
+
+function createFolders(teamArray){
+  for(var x = 0; x < teamArray.length; x++){
+    var current = teamArray[x];
+
+    mkdirp('../collectedJSON/team_' + current, function (err) {
+      if (err) console.error(err)
+      else console.log('created for ' + current)
+    });
+
+
+  }
 }
 
 function makeFile(exportBook){

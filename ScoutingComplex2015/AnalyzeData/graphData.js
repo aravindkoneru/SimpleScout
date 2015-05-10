@@ -2,28 +2,55 @@ var file = require('read-file')
 var auth = file.readFileSync(__dirname + '/plotlyAuth.txt');
 //console.log(auth.substring(auth.indexOf('\n')+1, auth.length))
 var plotly = require('plotly')(auth.substring(0, auth.indexOf('\n')), auth.substring(auth.indexOf('\n')+1, auth.length-1));
+var fs = require('fs');
+
+
 
 module.exports = {
-  graphBins: graphTotes
+  writeGraphData: setGraphData
 };
 
-function graphTotes(scoutingData, teamNumb){
-  var matchNum = [];
-  var binsInteracted = [];
 
-  for(var x = 0; x < scoutingData.length; x++){
-    var current = scoutingData[x];
-    matchNum.push(x+1);
-    binsInteracted.push(current['teleOp']['totesStacked']);
+function setGraphData(teamPayload, teamNumber){
+  //console.log(teamPayload);
+  var dataPoints = {};
+
+  for(var x = 0; x < teamPayload.length; x++){
+    var current = teamPayload[x];
+
+    for(var key in current){
+      if(current.hasOwnProperty(key)){//outer keys (1st row headers)
+        var inner  = current[key];
+
+        for(var key2 in inner){
+          if(inner.hasOwnProperty(key2)){//inner headers (actual data)
+
+            if(typeof dataPoints[key2] === 'undefined'){//check if key not in dataPoints
+              dataPoints[key2] = [];
+            }
+
+            dataPoints[key2].push(inner[key2]);
+
+          }
+        }
+
+      }
+
+    }
   }
 
-  var data = [{x: matchNum, y: binsInteracted, type: 'scatter'}]
-  var graphOptions = {fileopt: "overwrite", filename: "Team " + teamNumb + ": Totes Interacted", world_readable: false};
+  var outputFilename = '../collectedJSON/team_' + teamNumber + '/dataPonts.json';
 
-  plotly.plot(data, graphOptions, function(err, msg){
-    if(err) return console.log(err);
-    console.log(msg);
-  })
+  fs.writeFile(outputFilename, JSON.stringify(dataPoints, null, 4), function(err) {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log("JSON saved to " + outputFilename);
+      }
+  });
+
+
+  return dataPoints;
 }
 
 

@@ -3,6 +3,9 @@ An FRC scouting program written in node.js and powered by [The Blue Alliance API
 
 ## Dependencies
 
+Please note that these are just working dependencies. I don't actually know how many of these will be used in final release.
+Looking at the code, its obvious that some of these are not used or used very sparingly.
+
 [node-js](https://nodejs.org/download/)
 
 [sync-prompt](https://www.npmjs.com/package/sync-prompt) `npm install sync-prompt`
@@ -15,9 +18,13 @@ An FRC scouting program written in node.js and powered by [The Blue Alliance API
 
 [plotly](https://plot.ly/feed/) `npm install plotly` (May not make final release)
 
-[python-shell](https://www.npmjs.com/package/python-shell#running-a-python-script-with-arguments-and-options) `npm install python-shell`
+[python-shell](https://www.npmjs.com/package/python-shell#running-a-python-script-with-arguments-and-options) `npm install python-shell` (may not make final release)
 
-[plotly](https://plot.ly/python/getting-started/) `pip install plotly`
+[plotly](https://plot.ly/python/getting-started/) `pip install plotly`(may not make final release)
+
+[mkdirp](https://www.npmjs.com/package/mkdirp) `npm install mkdirp`
+
+[pygal](http://pygal.org/download/) `pip install pygal`
 
 ##Instructions
 

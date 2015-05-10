@@ -75,7 +75,7 @@ function getTeamPayload(excelBook, teamNumber){
     payload.push(JSON.parse(JSON.stringify(matchSchema)));
     setDefault(matchSchema);
   }
-  console.log(payload)
+  //console.log(payload)
   return payload;
 }
 
@@ -125,5 +125,8 @@ function combine(a, b){
 
 
 //@TODO:time for some server backend?
+var data = (genInfo("sample_files/scouting.xlsx", 11))
 
-graphs.graphBins(genInfo("sample_files/scouting.xlsx", 11), 11);
+//console.log(data);
+
+graphs.writeGraphData(data, 11);
