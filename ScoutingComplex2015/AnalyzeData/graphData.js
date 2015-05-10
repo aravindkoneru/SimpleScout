@@ -39,7 +39,7 @@ function setGraphData(teamPayload, teamNumber){
     }
   }
 
-  var outputFilename = '../collectedJSON/team_' + teamNumber + '/dataPonts.json';
+  var outputFilename = '../collectedJSON/team_' + teamNumber + '/dataPoints.json';
 
   fs.writeFile(outputFilename, JSON.stringify(dataPoints, null, 4), function(err) {
       if(err) {
