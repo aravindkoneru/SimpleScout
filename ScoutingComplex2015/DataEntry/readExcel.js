@@ -13,10 +13,10 @@ var matchSchema = {
     stackedToteSet: ""
   },
   actionsCompleted:{
-    robotSet: "",
-    containerSet: "",
-    toteSet: "",
-    stackedToteSet: ""
+    compeltedRobotSet: "",
+    completedContainerSet: "",
+    completedToteSet: "",
+    completedStackedToteSet: ""
   },
   teleOp:{
     totesStacked: "",
@@ -123,10 +123,23 @@ function combine(a, b){
   return a;
 }
 
+function genInfoAll(location){
+  var wb = xlsx.readFile(location);
+  var sheets = wb.SheetNames;
+
+  for(var x = 0; x < sheets.length; x++){
+    var teamNumber = parseInt(sheets[x])
+
+    var payload = getTeamPayload(wb, teamNumber);
+    graphs.writeGraphData(payload, teamNumber);
+  }
+}
+
 
 //@TODO:time for some server backend?
-var data = (genInfo("sample_files/scouting.xlsx", 11))
+//var data = (genInfo("sample_files/scouting.xlsx", 11))
 
 //console.log(data);
 
-graphs.writeGraphData(data, 11);
+//graphs.writeGraphData(data, 11);
+genInfoAll("sample_files/scouting.xlsx");

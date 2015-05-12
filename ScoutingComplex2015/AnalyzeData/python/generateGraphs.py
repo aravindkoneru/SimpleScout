@@ -16,7 +16,7 @@ def allZero(someArray):
 #print jsonData;
 
 line_chart = pygal.Line(style = DarkSolarizedStyle);
-line_chart.title = 'Team 11 Statistics'
+line_chart.title = 'Team 11 Quantatative Stats'
 line_chart.x_labels = map(str, range(1, 13))
 line_chart.x_title = "Match Number"
 line_chart.y_title = "Interactions with Respective Object"
@@ -27,10 +27,16 @@ for item in data:
     if(type(data[item][0]) is int and allZero(data[item]) == False):
         line_chart.add(item, data[item]);
 
-
-
 #line_chart.add('totes', data['totes']);
-line_chart.render_to_file('testLine.svg');
+line_chart.render_to_file('lineChart.svg');
+
+
+bar_chart = pygal.Bar()
+bar_chart.title = 'Team 11 Qualitative Stats'
+line_chart.y.title = "Number of times Attempted/Completed"
+chart.x_labels = 'robotSet', 'containerSet', 'toteSet', 'stackedToteSet', 'obtained', 'step'
+
+
 
 
 # line_chart = pygal.Line()
