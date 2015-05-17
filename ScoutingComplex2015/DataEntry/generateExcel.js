@@ -1,6 +1,6 @@
 var xlsx = require('xlsx');
 var http = require('http');
-var file = require('read-file')
+var file = require('read-file');
 var auth = file.readFileSync('../authkey.txt');
 var mkdirp = require('mkdirp');
 
@@ -24,18 +24,18 @@ function getTeams(eventCode){
       var teams = JSON.parse(str);
       genTeamArray(teams);
     });
-  }
+  };
 
   http.request(options, callback).end();
 }
 
 //get the team numbers of all the teams attending an event
 function genTeamArray(teamData){
-  var teams = teamData['teams'];
+  var teams = teamData.teams;
   var teamNumbers = [];
 
   for(var x = 0; x < teams.length; x++){
-    var currentTeam = teams[x]['teamNumber'];
+    var currentTeam = teams[x].teamNumbers;
 
     teamNumbers.push(currentTeam);
   }
@@ -66,7 +66,7 @@ function generateExcelBook(teamNumbers){
 
 function getTemplate(){
   var wb = xlsx.readFile('sample_files/template.xlsx');
-  var ws = wb.Sheets['Sheet1'];
+  var ws = wb.Sheets.Sheet1;
   ws['!cols'] = getCols(ws);
   return ws;
 }
@@ -99,8 +99,8 @@ function createFolders(teamArray){
     var current = teamArray[x];
 
     mkdirp('../collectedJSON/team_' + current, function (err) {
-      if (err) console.error(err)
-      else console.log('created for ' + current)
+      if (err) console.error(err);
+      else console.log('created for ' + current);
     });
 
 
@@ -111,4 +111,4 @@ function makeFile(exportBook){
   xlsx.writeFile(exportBook, 'scouting.xlsx');
 }
 
-getTeams('MRCMP')
+getTeams('MRCMP');

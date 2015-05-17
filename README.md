@@ -8,9 +8,11 @@ Looking at the code, its obvious that some of these are not used or used very sp
 
 [node-js](https://nodejs.org/download/)
 
+[q](https://www.npmjs.com/package/q) `npm install q`
+
 [sync-prompt](https://www.npmjs.com/package/sync-prompt) `npm install sync-prompt`
 
-[underscore.js](http://underscorejs.org/) `npm install underscore`
+[underscore.js](http://underscorejs.org/) `npm install underscore` (May not make final release)
 
 [read-file](https://www.npmjs.com/package/read-file) `npm i read-file --save`
 
@@ -49,6 +51,8 @@ it is in its best shape for the 2016 season. The following features are tentativ
 * Creating a filter for the matches analyzed/reviewed
 * Creating a website or phone app for easier access
 * Display more detailed status using the [FIRST API](http://docs.frcevents.apiary.io/)
+* Do all async work using promises
+* Make an index/api
 
 ##Updates
 
@@ -57,6 +61,7 @@ it is in its best shape for the 2016 season. The following features are tentativ
 * 5/5/2015: Began working on bulk data entry (excel) and auto generation of excel files
 * 5/7/2015: Began working on the graphs and other analytics
 * 5/8/2015: Looking into python for plotting data instead of using node.js (want to locally generate graphs)
+* 5/16/2015: Began working with q promises in order to make the data generation more predictable
 
 ##Conclusion/Notes
 Please feel free to contribute and send pull requests. If you have any problems or find
