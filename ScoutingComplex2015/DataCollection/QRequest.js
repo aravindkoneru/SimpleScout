@@ -50,26 +50,42 @@ function storeEventData(teamNumber, parsedEventData){
 
   teamData.analytics = {};
 
-
+/*
   for(var eventCode in teamData.events){
     if(teamData.events.hasOwnProperty(eventCode)){
 
-      var dataPromise; //= populateRawScore(teamData, teamNumber, eventCode);
-/*
-      dataPromise
-      .then(function(data){
-        teamData = data;
-        //console.log(data);
-      });
-      */
-
-      dataPromise =populateMatchData(teamData, teamNumber, eventCode);
+      var dataPromise = populateRawScore(teamData, teamNumber, eventCode);
 
       dataPromise
       .then(function(data){
+        //return data;
         teamData = data;
+        for(var key in data){
+          if(data.hasOwnProperty(key)){
+            teamData[key] = data[key];
+          }
+        }
+        //console.log(teamData);
+      });
+
+      //console.log(teamData);
+      //console.log('worked');
+
+
+      var nextPromise =populateMatchData(teamData, teamNumber, eventCode);
+
+      nextPromise
+      .then(function(data){
+        console.log('\ndata is: ' + JSON.stringify(data));
+        for(var key in data){
+          if(data.hasOwnProperty(key)){
+            teamData[key] = data[key];
+          }
+        }
         //console.log(data);
       });
+
+      //console.log(teamData);
 
     //  returnPromise.resolve(teamData);
 
@@ -78,6 +94,69 @@ function storeEventData(teamNumber, parsedEventData){
     }
   }
 
+  //console.log(teamData);
+  */
+  teamDataPromise.resolve(teamData);
+  return teamDataPromise.promise;
+}
+
+
+
+function populateMatchData(teamData, teamNumber, eventCode){
+  var matchDataPromise = Q.defer();
+
+  var rawMatches = getMatches(teamNumber, eventCode);
+
+  rawMatches
+  .then(function(data){
+    //console.log(data);
+    return storeMatchData(teamData, eventCode, data);
+  })
+  .then(function(data){
+    //console.log(JSON.stringify(data));
+    matchDataPromise.resolve(data);
+  });
+
+  return matchDataPromise.promise;
+}
+
+function getMatches(teamNumber, eventCode){
+  var rawMatches = Q.defer();
+
+  var options = {
+    host: 'private-945e3-frcevents.apiary-proxy.com',
+    path: '/api/v1.0/matches/2015/' + eventCode + '?tournamentLevel=qual&teamNumber=' + teamNumber,
+    headers:
+      {Authorization: 'Basic ' + auth}
+  };
+
+  callback = function(response) {
+    var str = '';
+
+
+    response.on('data', function(chunk) {
+      str += chunk;
+    });
+
+    response.on('end', function() {
+      var rawMatchesObject = JSON.parse(str);
+      rawMatches.resolve(rawMatchesObject);
+      //storeMatchData(eventCode, rawMatchesObject);
+    });
+  };
+
+  http.request(options, callback).end();
+  return rawMatches.promise;
+}
+
+function storeMatchData(teamData, eventCode, rawMatchesObject){
+  var teamDataPromise = Q.defer();
+  var matches = rawMatchesObject.Matches[0];
+
+  teamData.events[eventCode].matches = matches;
+  //console.log(teamData.events[eventCode].matches === matches);
+
+  //console.log(teamData);
   teamDataPromise.resolve(teamData);
   return teamDataPromise.promise;
 }
@@ -91,33 +170,15 @@ function populateRawScore(teamData, teamNumber, eventCode){
   rawScorePromise
   .then(function(data){
     //console.log('got this from: ' + JSON.stringify(data));
-    storeScoreData(teamData, eventCode, data);
+    return storeScoreData(teamData, eventCode, data);
   })
   .then(function(data){
-    console.log('this');
+    //console.log('this');
     teamDataPromise.resolve(teamData);
   });
 
   return teamDataPromise.promise;
   //console.log(teamData);
-}
-
-function populateMatchData(teamData, teamNumber, eventCode){
-  var matchDataPromise = Q.defer();
-
-  var rawMatches = getMatches(teamNumber, eventCode);
-
-  rawMatches
-  .then(function(data){
-    //console.log(JSON.stringify(data))
-    storeMatchData(teamData, eventCode, data);
-  })
-  .then(function(data){
-    console.log(JSON.stringify(data));
-    matchDataPromise.resolve(data);
-  });
-
-  return matchDataPromise.promise;
 }
 
 function getRawScores(teamNumber, eventCode){
@@ -165,54 +226,78 @@ function storeScoreData(teamData, eventCode, parsedScoreData){
   return storeScorePromise.promise;
 }
 
-function getMatches(teamNumber, eventCode){
-  var rawMatches = Q.defer();
-
-  var options = {
-    host: 'private-945e3-frcevents.apiary-proxy.com',
-    path: '/api/v1.0/matches/2015/' + eventCode + '?tournamentLevel=qual&teamNumber=' + teamNumber,
-    headers:
-      {Authorization: 'Basic ' + auth}
-  };
-
-  callback = function(response) {
-    var str = '';
 
 
-    response.on('data', function(chunk) {
-      str += chunk;
-    });
+var teamData ={};
+var teamNumber = 1923;
+function temp(teamNumber){
+  var promise = getEvents(teamNumber);
 
-    response.on('end', function() {
-      var rawMatchesObject = JSON.parse(str);
-      rawMatches.resolve(rawMatchesObject);
-      //storeMatchData(eventCode, rawMatchesObject);
-    });
-  };
+  promise
+  .then(function(data){//data is the event data from FIRST api
+    return storeEventData(teamNumber, data);
+  })
+  .then(function(data){
+    
+  });
 
-  http.request(options, callback).end();
-  return rawMatches.promise;
+  /*
+    for(var eventCode in teamData.events){
+      if(teamData.events.hasOwnProperty(eventCode)){
+
+        var dataPromise = populateRawScore(teamData, teamNumber, eventCode);
+
+        dataPromise
+        .then(function(data){
+          //return data;
+          teamData = data;
+          for(var key in data){
+            if(data.hasOwnProperty(key)){
+              teamData[key] = data[key];
+            }
+          }
+          //console.log(teamData);
+        });
+
+        //console.log(teamData);
+        //console.log('worked');
+
+
+        var nextPromise =populateMatchData(teamData, teamNumber, eventCode);
+
+        nextPromise
+        .then(function(data){
+          console.log('\ndata is: ' + JSON.stringify(data));
+          for(var key in data){
+            if(data.hasOwnProperty(key)){
+              teamData[key] = data[key];
+            }
+          }
+          //console.log(data);
+        });
+
+        //console.log(teamData);
+
+      //  returnPromise.resolve(teamData);
+
+        //getRawScores(teamNumber, eventCode);
+        //getMatches(teamNumber, eventCode);
+      }
+    }
+
+    //console.log(teamData);
+    */
+  /*
+  .then(function(data){//data is the rawTeamData json without any values
+      for(var key in data){
+        if(data.hasOwnProperty(key)){
+          teamData[key] = {};
+          teamData[key] = data[key];
+          console.log('here');
+        }
+      }
+      console.log(teamData);
+  })
+  */
+
 }
-
-function storeMatchData(teamData, eventCode, rawMatchesObject){
-  var teamDataPromise = Q.defer();
-  var matches = rawMatchesObject.Matches[0];
-
-  teamData.events[eventCode].matches = matches;
-  //console.log(teamData.events[eventCode].matches === matches);
-
-  teamDataPromise.resolve(teamData);
-  return teamDataPromise.promise;
-}
-
-
-
-var promise = getEvents(1923);
-
-promise
-.then(function(data){//data is the event data from FIRST api
-  return storeEventData(1923, data);
-})
-.then(function(data){//data is the rawTeamData json without any values
-  console.log(data);
-});
