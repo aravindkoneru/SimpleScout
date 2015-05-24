@@ -1,3 +1,12 @@
+/*
+****************************
+DEPRECATED DO NOT USE
+
+USE QRequest.js INSTEAD
+*****************************
+*/
+
+
 var http = require('http');
 var file = require('read-file');
 var u = require('underscore');
@@ -128,5 +137,5 @@ function storeMatchData(eventCode, rawMatchesObject){
 
 scrapeTeamStats(1923);
 var log = u.bind(console.log, console);
-u.delay(log, 2500, teamData);
-u.delay(analyze.calcData, 2000, teamData);
+u.delay(log, 5000, teamData);
+u.delay(analyze.calcData, 6000, teamData);

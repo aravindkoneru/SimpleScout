@@ -3,18 +3,16 @@ var file = require('read-file');
 var auth = file.readFileSync('../authkey.txt');
 var Q = require('q');
 
-//var teamData = {};
-
-
-function getEvents(teamNumber){
+function getEvents(teamNumber) {
   var deffered = Q.defer();
 
 
   var options = {
     host: 'private-945e3-frcevents.apiary-proxy.com',
     path: '/api/v1.0/events/2015?teamNumber=' + teamNumber,
-    headers:
-      {Authorization: 'Basic ' + auth}
+    headers: {
+      Authorization: 'Basic ' + auth
+    }
   };
   callback = function(response) {
     var str = '';
@@ -35,14 +33,14 @@ function getEvents(teamNumber){
   return deffered.promise;
 }
 
-function storeEventData(teamNumber, parsedEventData){
+function makeSkeleton(teamNumber, parsedEventData) {
   var teamData = {};
   var teamDataPromise = Q.defer();
 
   teamData.events = {};
-  for(var x = 0; x < parsedEventData.Events.length; x++){
+  for (var x = 0; x < parsedEventData.Events.length; x++) {
     var current = parsedEventData.Events[x];
-    if(current.name !== "FIRST Championship"){
+    if (current.name !== "FIRST Championship") {
       teamData.events[current.code] = {};
       teamData.events[current.code].event_name = current.name;
     }
@@ -50,84 +48,42 @@ function storeEventData(teamNumber, parsedEventData){
 
   teamData.analytics = {};
 
-/*
-  for(var eventCode in teamData.events){
-    if(teamData.events.hasOwnProperty(eventCode)){
-
-      var dataPromise = populateRawScore(teamData, teamNumber, eventCode);
-
-      dataPromise
-      .then(function(data){
-        //return data;
-        teamData = data;
-        for(var key in data){
-          if(data.hasOwnProperty(key)){
-            teamData[key] = data[key];
-          }
-        }
-        //console.log(teamData);
-      });
-
-      //console.log(teamData);
-      //console.log('worked');
-
-
-      var nextPromise =populateMatchData(teamData, teamNumber, eventCode);
-
-      nextPromise
-      .then(function(data){
-        console.log('\ndata is: ' + JSON.stringify(data));
-        for(var key in data){
-          if(data.hasOwnProperty(key)){
-            teamData[key] = data[key];
-          }
-        }
-        //console.log(data);
-      });
-
-      //console.log(teamData);
-
-    //  returnPromise.resolve(teamData);
-
-      //getRawScores(teamNumber, eventCode);
-      //getMatches(teamNumber, eventCode);
-    }
-  }
-
-  //console.log(teamData);
-  */
   teamDataPromise.resolve(teamData);
   return teamDataPromise.promise;
 }
 
+function populateMatches(teamData, teamNumber, eventCode) {
+
+  var teamMatchPromise = Q.defer();
+
+  var rawMatchPromise = getMatches(teamNumber, eventCode);
+  //console.log('made promise')
+
+  rawMatchPromise
+    .then(function(data) {
+      //console.log('got this from: ' + JSON.stringify(data));
+      return storeMatchData(teamData, eventCode, data);
+    })
+    .then(function(data) {
+      //console.log(data);
+      //console.log('this');
+      teamMatchPromise.resolve(teamData);
+    });
 
 
-function populateMatchData(teamData, teamNumber, eventCode){
-  var matchDataPromise = Q.defer();
-
-  var rawMatches = getMatches(teamNumber, eventCode);
-
-  rawMatches
-  .then(function(data){
-    //console.log(data);
-    return storeMatchData(teamData, eventCode, data);
-  })
-  .then(function(data){
-    //console.log(JSON.stringify(data));
-    matchDataPromise.resolve(data);
-  });
-
-  return matchDataPromise.promise;
+  return teamMatchPromise.promise;
+  //console.log(teamData);
 }
 
-function getMatches(teamNumber, eventCode){
+function getMatches(teamNumber, eventCode) {
   var rawMatches = Q.defer();
 
   var options = {
     host: 'private-945e3-frcevents.apiary-proxy.com',
     path: '/api/v1.0/matches/2015/' + eventCode + '?tournamentLevel=qual&teamNumber=' + teamNumber,
-    headers:
-      {Authorization: 'Basic ' + auth}
+    headers: {
+      Authorization: 'Basic ' + auth
+    }
   };
 
   callback = function(response) {
@@ -149,7 +105,7 @@ function getMatches(teamNumber, eventCode){
   return rawMatches.promise;
 }
 
-function storeMatchData(teamData, eventCode, rawMatchesObject){
+function storeMatchData(teamData, eventCode, rawMatchesObject) {
   var teamDataPromise = Q.defer();
   var matches = rawMatchesObject.Matches[0];
 
@@ -161,28 +117,30 @@ function storeMatchData(teamData, eventCode, rawMatchesObject){
   return teamDataPromise.promise;
 }
 
-
-function populateRawScore(teamData, teamNumber, eventCode){
+function populateRawScore(teamData, teamNumber, eventCode) {
 
   var teamDataPromise = Q.defer();
 
   var rawScorePromise = getRawScores(teamNumber, eventCode);
+  //console.log('made promise')
+
   rawScorePromise
-  .then(function(data){
-    //console.log('got this from: ' + JSON.stringify(data));
-    return storeScoreData(teamData, eventCode, data);
-  })
-  .then(function(data){
-    //console.log('this');
-    teamDataPromise.resolve(teamData);
-  });
+    .then(function(data) {
+      //console.log('got this from: ' + JSON.stringify(data));
+      return storeScoreData(teamData, eventCode, data);
+    })
+    .then(function(data) {
+      //console.log('this');
+      teamDataPromise.resolve(teamData);
+    });
+
 
   return teamDataPromise.promise;
   //console.log(teamData);
 }
 
 function getRawScores(teamNumber, eventCode){
-  var deferred = Q.defer();
+  var rawScoresPromise = Q.defer();
 
   var options = {
     host: 'private-945e3-frcevents.apiary-proxy.com',
@@ -200,24 +158,24 @@ function getRawScores(teamNumber, eventCode){
 
     response.on('end', function(){
       var parsedScoreData = JSON.parse(str);
-      deferred.resolve(parsedScoreData);
+      rawScoresPromise.resolve(parsedScoreData);
       //storeScoreData(eventCode, parsedScoreData);
     });
   };
 
   http.request(options, callback).end();
-  return deferred.promise;
+  return rawScoresPromise.promise;
 }
 
-function storeScoreData(teamData, eventCode, parsedScoreData){
+function storeScoreData(teamData, eventCode, parsedScoreData) {
   var storeScorePromise = Q.defer();
 
   var rawStats = parsedScoreData.Rankings[0];
 
   teamData.events[eventCode].raw_stats = {};
 
-  for(var key in rawStats){
-    if(rawStats.hasOwnProperty(key)){
+  for (var key in rawStats) {
+    if (rawStats.hasOwnProperty(key)) {
       teamData.events[eventCode].raw_stats[key] = rawStats[key];
     }
   }
@@ -226,78 +184,43 @@ function storeScoreData(teamData, eventCode, parsedScoreData){
   return storeScorePromise.promise;
 }
 
+function getTeamObject(teamNumber){
+  teamData = {};
+  var teamObjectPromise = Q.defer();
 
-
-var teamData ={};
-var teamNumber = 1923;
-function temp(teamNumber){
   var promise = getEvents(teamNumber);
 
   promise
-  .then(function(data){//data is the event data from FIRST api
-    return storeEventData(teamNumber, data);
-  })
-  .then(function(data){
-    
-  });
+    .then(function(data) { //data is the event data from FIRST api
+      return makeSkeleton(teamNumber, data);
+    })
 
-  /*
-    for(var eventCode in teamData.events){
-      if(teamData.events.hasOwnProperty(eventCode)){
+    //@TODO: Make this part of the code more efficient. This is way to redundant
+    .then(function(skeletonObj) {//sets the raw score data from FIRST api
+      var someCode;
 
-        var dataPromise = populateRawScore(teamData, teamNumber, eventCode);
-
-        dataPromise
-        .then(function(data){
-          //return data;
-          teamData = data;
-          for(var key in data){
-            if(data.hasOwnProperty(key)){
-              teamData[key] = data[key];
-            }
-          }
-          //console.log(teamData);
-        });
-
-        //console.log(teamData);
-        //console.log('worked');
-
-
-        var nextPromise =populateMatchData(teamData, teamNumber, eventCode);
-
-        nextPromise
-        .then(function(data){
-          console.log('\ndata is: ' + JSON.stringify(data));
-          for(var key in data){
-            if(data.hasOwnProperty(key)){
-              teamData[key] = data[key];
-            }
-          }
-          //console.log(data);
-        });
-
-        //console.log(teamData);
-
-      //  returnPromise.resolve(teamData);
-
-        //getRawScores(teamNumber, eventCode);
-        //getMatches(teamNumber, eventCode);
+      for(var eventCode in skeletonObj.events){
+        someCode = eventCode;
+        populateRawScore(skeletonObj, teamNumber, eventCode);
       }
-    }
 
-    //console.log(teamData);
-    */
-  /*
-  .then(function(data){//data is the rawTeamData json without any values
-      for(var key in data){
-        if(data.hasOwnProperty(key)){
-          teamData[key] = {};
-          teamData[key] = data[key];
-          console.log('here');
-        }
+      return populateRawScore(skeletonObj, teamNumber, someCode);
+
+    })
+    .then(function(populatedScores) {//sets the match data from the FIRST api
+      var someCode;
+
+      for(var eventCode in populatedScores.events){
+        someCode = eventCode;
+        populateMatches(populatedScores, teamNumber, eventCode);
       }
-      console.log(teamData);
-  })
-  */
 
+      return populateMatches(populatedScores, teamNumber, someCode);
+
+    })
+    .then(function(populatedMatches){
+        teamObjectPromise.resolve(populatedMatches);
+    });
+
+    return teamObjectPromise.promise;
 }
