@@ -1,0 +1,31 @@
+{
+  "name" : "SimpleScout",
+  "version" : "0.0.1",
+  "description" : "An FRC Scouting programing powered by node.js, python, The Blue Alliance, and the FIRST api",
+
+  "author":{
+    "name" : "Aravind Koneru",
+    "email" : "aravind.b.koneru@gmail.com"
+  },
+
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/aravindkoneru/SimpleScout.git"
+  },
+
+  "_comment" : "It's very likely that the dependencies will change before launch",
+
+  "dependencies" : {
+    "q" : "1.4.1",
+    "sync-prompt" : "0.4.2",
+    "underscore" : "1.8.3",
+    "read-file" : "0.1.2",
+    "xlsx" : "0.8.0",
+    "plotly" : "1.0.2",
+    "python-shell" : "0.1.0",
+    "mkdirp" : "0.5.1"
+  },
+
+  "private" : true,
+  "analyze" : true
+}
