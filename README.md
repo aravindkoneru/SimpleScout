@@ -1,6 +1,8 @@
 # SimpleScout
 An FRC scouting program written in node.js and powered by [The Blue Alliance API](http://www.thebluealliance.com/apidocs) and the [FIRST API](http://docs.frcevents.apiary.io/)
 
+Let's talk:  [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aravindkoneru/SimpleScout?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 ## Dependencies
 
 Please note that these are just working dependencies. I don't actually know how many of these will be used in final release.

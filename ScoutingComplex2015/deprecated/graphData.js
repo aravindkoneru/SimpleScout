@@ -1,7 +1,7 @@
-var file = require('read-file')
-var auth = file.readFileSync(__dirname + '/plotlyAuth.txt');
+var file = require('read-file');
+//var auth = file.readFileSync(__dirname + '/plotlyAuth.txt');
 //console.log(auth.substring(auth.indexOf('\n')+1, auth.length))
-var plotly = require('plotly')(auth.substring(0, auth.indexOf('\n')), auth.substring(auth.indexOf('\n')+1, auth.length-1));
+//var plotly = require('plotly')(auth.substring(0, auth.indexOf('\n')), auth.substring(auth.indexOf('\n')+1, auth.length-1));
 var fs = require('fs');
 
 

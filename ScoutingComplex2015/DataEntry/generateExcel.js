@@ -31,16 +31,17 @@ function getTeams(eventCode){
 
 //get the team numbers of all the teams attending an event
 function genTeamArray(teamData){
+
   var teams = teamData.teams;
+
   var teamNumbers = [];
 
   for(var x = 0; x < teams.length; x++){
-    var currentTeam = teams[x].teamNumbers;
+    var currentTeam = teams[x].teamNumber;
 
     teamNumbers.push(currentTeam);
   }
 
-  //console.log(teamNumbers);
   generateExcelBook(teamNumbers);
   createFolders(teamNumbers);
 }
@@ -64,6 +65,7 @@ function generateExcelBook(teamNumbers){
   makeFile(exportBook);
 }
 
+//gets the template scouting sheet
 function getTemplate(){
   var wb = xlsx.readFile('sample_files/template.xlsx');
   var ws = wb.Sheets.Sheet1;
@@ -94,21 +96,31 @@ function getCols(ws){
   return wcols;
 }
 
+//make a team folder for every team at the competition
 function createFolders(teamArray){
   for(var x = 0; x < teamArray.length; x++){
     var current = teamArray[x];
 
-    mkdirp('../collectedJSON/team_' + current, function (err) {
-      if (err) console.error(err);
-      else console.log('created for ' + current);
-    });
-
-
+    makeTeamFolder(current);
   }
 }
 
+//given the teamNumber, make the folder to store the JSON
+function makeTeamFolder(teamNumber){
+  mkdirp('../collectedJSON/team_' + teamNumber, function (err) {
+    if (err) console.error(err);
+  });
+}
+
+//writes the excel file
 function makeFile(exportBook){
   xlsx.writeFile(exportBook, 'scouting.xlsx');
 }
 
-getTeams('MRCMP');
+//calls all the other functions to generate the scouting sheet
+function generateScoutingSheet(eventCode){
+  getTeams(eventCode);
+}
+
+
+generateScoutingSheet('MRCMP');
