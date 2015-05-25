@@ -272,12 +272,25 @@ function genInfoAll(location){
     var teamNumber = parseInt(sheets[x]);
 
     var payload = getTeamPayload(wb, teamNumber);
-    writeJSON(teamNumber, payload);
+    writeDataPoints(teamNumber, payload);
+    writeRaw(teamNumber, payload);
   }
 }
 
+function writeRaw(teamNumber, payload){
+  var outputFilename = '../collectedJSON/team_' + teamNumber + '/payload.json';
+
+  fs.writeFile(outputFilename, JSON.stringify(payload, null, 4), function(err) {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log("JSON saved to " + outputFilename);
+      }
+  });
+}
+
 //converts the payload into graph ready data and writes to a file
-function writeJSON(teamNumber, teamPayload){
+function writeDataPoints(teamNumber, teamPayload){
   var dataPoints = {};
 
   for(var x = 0; x < teamPayload.length; x++){

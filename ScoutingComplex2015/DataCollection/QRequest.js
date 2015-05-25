@@ -46,8 +46,6 @@ function makeSkeleton(teamNumber, parsedEventData) {
     }
   }
 
-  teamData.analytics = {};
-
   teamDataPromise.resolve(teamData);
   return teamDataPromise.promise;
 }

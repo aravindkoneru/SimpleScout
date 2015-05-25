@@ -1,6 +1,13 @@
-languge: node_js
+language: node_js
 node_js:
-  -.12
-  -.11
-  -.1
-  -.09
+  - "iojs"
+
+before_install:
+  - "npm install q"
+  - "npm install sync-prompt"
+  - "npm install underscore"
+  - "npm i read-file --save"
+  - "npm install xlsx"
+  - "npm install plotly"
+  - "npm install python-shell"
+  - "npm install mkdirp"
