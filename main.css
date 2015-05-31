@@ -1,0 +1,49 @@
+.centeredImg{
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+body{
+  background-color: #212121;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* !!! */
+}
+
+.centered {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.centeredTxt{
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 400px;
+
+}
+
+.header{
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36;
+  margin: 0 auto;
+  margin-top: 30;
+  text-align: center;
+}
+
+.footer{
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16;
+  margin: 0 auto;
+  margin-top: 40;
+  margin-bottom: 30;
+  text-align: center;
+}
