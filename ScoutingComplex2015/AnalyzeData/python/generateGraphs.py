@@ -14,13 +14,10 @@ def allZero(someArray):
             return False
     return True
 
-#jsonData = json.load(data);
-#
-#print jsonData;
 
 line_chart = pygal.Line(style=DarkSolarizedStyle)
 
-line_chart.title = 'Team 11 Quantatative Stats'
+line_chart.title = 'Team 11 Quantatative Stats'  #@TODO: Should auto to team
 line_chart.x_labels = map(str, range(1, 13))
 line_chart.x_title = "Match Number"
 line_chart.y_title = "Interactions with Respective Object"
@@ -36,12 +33,31 @@ for item in data:
                 max = num
         line_chart.add(item, data[item])
 
-line_chart.y_labels = map(str, range(1,max+1))
-#line_chart.add('totes', data['totes']);
+line_chart.y_labels = map(str, range(1, max+1))
 line_chart.render_to_file('lineChart.svg')
 
-#
-#bar_chart = pygal.Bar()
-#bar_chart.title = 'Team 11 Qualitative Stats'
-#line_chart.y.title = "Number of times Attempted/Completed"
-#chart.x_labels = 'robotSet', 'containerSet', 'toteSet', 'stackedToteSet', 'obtained', 'step'
+
+bar_chart = pygal.Bar(style=DarkSolarizedStyle)
+bar_chart.title = 'Qualitative Data for team 11' #@TODO: Should auto to team
+barCompleted = []
+barFailed = []
+barNames = []
+
+for item in data:
+    if(type(data[item][0]) is not int):
+        barNames.append(item)
+        completed = 0
+        failed = 0
+        for boolVal in data[item]:
+            if boolVal is True:
+                completed += 1
+            else:
+                failed += 1
+        barCompleted.append(completed)
+        barFailed.append(failed)
+
+bar_chart.add('Successful', barCompleted)
+bar_chart.add('Failed', barFailed)
+bar_chart.x_labels = barNames
+
+bar_chart.render_to_file('barChart.svg')
