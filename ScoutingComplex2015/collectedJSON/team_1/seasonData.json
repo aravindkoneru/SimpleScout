@@ -1,0 +1,2135 @@
+{
+    "events": {
+        "CMP-GALILEO": {
+            "event_name": "FIRST Championship - Galileo Subdivision",
+            "raw_stats": {
+                "rank": 40,
+                "teamNumber": 1,
+                "qualAverage": 123.4,
+                "autoPoints": 0,
+                "containerPoints": 516,
+                "coopertitionPoints": 160,
+                "litterPoints": 164,
+                "totePoints": 406,
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "dq": 0,
+                "matchesPlayed": 10
+            },
+            "matches": [
+                {
+                    "autoStartTime": "2015-04-23T03:59:59.497",
+                    "description": "Qualification 4",
+                    "level": "Qualification",
+                    "matchNumber": 4,
+                    "scoreRedFinal": 79,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 114,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5584,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 967,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3674,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 102,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4719,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-23T05:24:47.577",
+                    "description": "Qualification 16",
+                    "level": "Qualification",
+                    "matchNumber": 16,
+                    "scoreRedFinal": 22,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 80,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5725,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1902,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3397,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3492,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2168,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-23T09:36:07.73",
+                    "description": "Qualification 36",
+                    "level": "Qualification",
+                    "matchNumber": 36,
+                    "scoreRedFinal": 88,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 136,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5216,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 111,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 604,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 862,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 494,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-23T10:59:51.287",
+                    "description": "Qualification 48",
+                    "level": "Qualification",
+                    "matchNumber": 48,
+                    "scoreRedFinal": 147,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 66,
+                    "scoreBlueFoul": 6,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 2990,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2502,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2052,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1011,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3175,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-24T03:20:05.18",
+                    "description": "Qualification 58",
+                    "level": "Qualification",
+                    "matchNumber": 58,
+                    "scoreRedFinal": 91,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 161,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 597,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3770,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4920,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1540,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3288,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-24T04:19:05.277",
+                    "description": "Qualification 66",
+                    "level": "Qualification",
+                    "matchNumber": 66,
+                    "scoreRedFinal": 106,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 38,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 4961,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3410,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1547,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3142,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5429,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-24T06:39:53.397",
+                    "description": "Qualification 85",
+                    "level": "Qualification",
+                    "matchNumber": 85,
+                    "scoreRedFinal": 205,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 162,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 365,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 525,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3787,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3944,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2451,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-24T09:14:15.427",
+                    "description": "Qualification 93",
+                    "level": "Qualification",
+                    "matchNumber": 93,
+                    "scoreRedFinal": 156,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 133,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 3562,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 384,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2067,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5541,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5460,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-24T10:25:28.85",
+                    "description": "Qualification 103",
+                    "level": "Qualification",
+                    "matchNumber": 103,
+                    "scoreRedFinal": 210,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 115,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 1690,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2836,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1595,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1649,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 237,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-24T12:35:06.887",
+                    "description": "Qualification 122",
+                    "level": "Qualification",
+                    "matchNumber": 122,
+                    "scoreRedFinal": 115,
+                    "scoreRedFoul": 12,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 178,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 20,
+                    "Teams": [
+                        {
+                            "teamNumber": 1,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2067,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4373,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2056,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3618,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 492,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                }
+            ]
+        },
+        "CTWAT": {
+            "event_name": "NE District - Waterbury Event",
+            "raw_stats": {},
+            "matches": []
+        },
+        "ILCH": {
+            "event_name": "Midwest Regional",
+            "raw_stats": {}
+        },
+        "MICMP": {
+            "event_name": "FIRST in Michigan District Championship",
+            "raw_stats": {
+                "rank": 30,
+                "teamNumber": 1,
+                "qualAverage": 147,
+                "autoPoints": 24,
+                "containerPoints": 672,
+                "coopertitionPoints": 320,
+                "litterPoints": 248,
+                "totePoints": 506,
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "dq": 0,
+                "matchesPlayed": 12
+            },
+            "matches": [
+                {
+                    "autoStartTime": "2015-04-09T14:41:54.26",
+                    "description": "Qualification 17",
+                    "level": "Qualification",
+                    "matchNumber": 17,
+                    "scoreRedFinal": 205,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 146,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 2405,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 68,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 503,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1711,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3322,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-09T15:28:10.53",
+                    "description": "Qualification 27",
+                    "level": "Qualification",
+                    "matchNumber": 27,
+                    "scoreRedFinal": 138,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 4,
+                    "scoreBlueFinal": 212,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 1,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 314,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 67,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5478,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5046,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2959,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-09T17:35:18.767",
+                    "description": "Qualification 51",
+                    "level": "Qualification",
+                    "matchNumber": 51,
+                    "scoreRedFinal": 144,
+                    "scoreRedFoul": 6,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 191,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 20,
+                    "Teams": [
+                        {
+                            "teamNumber": 3875,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5562,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3688,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4967,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3536,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-09T18:17:53.143",
+                    "description": "Qualification 60",
+                    "level": "Qualification",
+                    "matchNumber": 60,
+                    "scoreRedFinal": 94,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 137,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5517,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3620,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5710,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2137,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5260,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-09T19:00:33.493",
+                    "description": "Qualification 69",
+                    "level": "Qualification",
+                    "matchNumber": 69,
+                    "scoreRedFinal": 131,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 184,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 830,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3098,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 548,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1502,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 27,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-10T10:39:53.593",
+                    "description": "Qualification 93",
+                    "level": "Qualification",
+                    "matchNumber": 93,
+                    "scoreRedFinal": 149,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 20,
+                    "scoreBlueFinal": 113,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 4994,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 33,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 123,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3539,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 703,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-10T13:45:01.103",
+                    "description": "Qualification 113",
+                    "level": "Qualification",
+                    "matchNumber": 113,
+                    "scoreRedFinal": 200,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 149,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 85,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3641,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2767,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1023,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2337,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-10T15:15:21.26",
+                    "description": "Qualification 129",
+                    "level": "Qualification",
+                    "matchNumber": 129,
+                    "scoreRedFinal": 123,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 182,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5534,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3668,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5460,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2834,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1189,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-10T16:02:08.133",
+                    "description": "Qualification 139",
+                    "level": "Qualification",
+                    "matchNumber": 139,
+                    "scoreRedFinal": 184,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 156,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 217,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3452,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4482,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4362,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5216,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-10T18:27:57.273",
+                    "description": "Qualification 157",
+                    "level": "Qualification",
+                    "matchNumber": 157,
+                    "scoreRedFinal": 84,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 148,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5114,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5712,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5167,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5069,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5692,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-11T10:06:35.88",
+                    "description": "Qualification 187",
+                    "level": "Qualification",
+                    "matchNumber": 187,
+                    "scoreRedFinal": 127,
+                    "scoreRedFoul": 6,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 92,
+                    "scoreBlueFoul": 12,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 107,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5524,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5053,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2054,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5675,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-04-11T11:20:33.843",
+                    "description": "Qualification 202",
+                    "level": "Qualification",
+                    "matchNumber": 202,
+                    "scoreRedFinal": 136,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 111,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5509,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 245,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4961,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4815,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4130,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                }
+            ]
+        },
+        "MILIV": {
+            "event_name": "FIM District - Livonia Event",
+            "raw_stats": {
+                "rank": 11,
+                "teamNumber": 1,
+                "qualAverage": 87,
+                "autoPoints": 20,
+                "containerPoints": 336,
+                "coopertitionPoints": 240,
+                "litterPoints": 128,
+                "totePoints": 326,
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "dq": 0,
+                "matchesPlayed": 12
+            },
+            "matches": [
+                {
+                    "autoStartTime": "2015-03-27T11:57:35.287",
+                    "description": "Qualification 6",
+                    "level": "Qualification",
+                    "matchNumber": 6,
+                    "scoreRedFinal": 29,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 37,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 4680,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 503,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4405,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 313,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5114,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-27T12:36:23.287",
+                    "description": "Qualification 11",
+                    "level": "Qualification",
+                    "matchNumber": 11,
+                    "scoreRedFinal": 128,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 83,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5756,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 548,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 280,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5708,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4390,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-27T14:22:44.543",
+                    "description": "Qualification 18",
+                    "level": "Qualification",
+                    "matchNumber": 18,
+                    "scoreRedFinal": 126,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 52,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 3641,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5467,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2832,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3568,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 216,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-27T14:45:13.533",
+                    "description": "Qualification 21",
+                    "level": "Qualification",
+                    "matchNumber": 21,
+                    "scoreRedFinal": 122,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 105,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 4390,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 548,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3568,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4405,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1250,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-27T16:03:39",
+                    "description": "Qualification 32",
+                    "level": "Qualification",
+                    "matchNumber": 32,
+                    "scoreRedFinal": 47,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 71,
+                    "scoreBlueFoul": 6,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5695,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2224,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5066,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4362,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2048,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-27T16:45:02.367",
+                    "description": "Qualification 37",
+                    "level": "Qualification",
+                    "matchNumber": 37,
+                    "scoreRedFinal": 106,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 118,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 217,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5695,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3414,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 280,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 288,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-27T17:55:41.733",
+                    "description": "Qualification 46",
+                    "level": "Qualification",
+                    "matchNumber": 46,
+                    "scoreRedFinal": 60,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 60,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5531,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4390,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 244,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3568,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2620,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-27T18:39:23.777",
+                    "description": "Qualification 52",
+                    "level": "Qualification",
+                    "matchNumber": 52,
+                    "scoreRedFinal": 88,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 128,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 20,
+                    "Teams": [
+                        {
+                            "teamNumber": 5046,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 503,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2145,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 67,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 27,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-27T19:02:09.01",
+                    "description": "Qualification 55",
+                    "level": "Qualification",
+                    "matchNumber": 55,
+                    "scoreRedFinal": 88,
+                    "scoreRedFoul": 6,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 104,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 244,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5008,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2145,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1250,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 51,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-28T10:09:25.217",
+                    "description": "Qualification 64",
+                    "level": "Qualification",
+                    "matchNumber": 64,
+                    "scoreRedFinal": 18,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 23,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5530,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5756,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5708,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 313,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2048,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-28T11:23:24.437",
+                    "description": "Qualification 74",
+                    "level": "Qualification",
+                    "matchNumber": 74,
+                    "scoreRedFinal": 140,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 12,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 1,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5114,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5046,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5008,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5217,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4405,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-28T12:05:40.41",
+                    "description": "Qualification 80",
+                    "level": "Qualification",
+                    "matchNumber": 80,
+                    "scoreRedFinal": 170,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 20,
+                    "scoreBlueFinal": 52,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 2960,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 288,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 67,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4768,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5641,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                }
+            ]
+        },
+        "MIWAT": {
+            "event_name": "FIM District - Waterford Event",
+            "raw_stats": {
+                "rank": 10,
+                "teamNumber": 1,
+                "qualAverage": 62.66,
+                "autoPoints": 20,
+                "containerPoints": 180,
+                "coopertitionPoints": 240,
+                "litterPoints": 82,
+                "totePoints": 236,
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "dq": 0,
+                "matchesPlayed": 12
+            },
+            "matches": [
+                {
+                    "autoStartTime": "2015-03-06T06:24:06.05",
+                    "description": "Qualification 3",
+                    "level": "Qualification",
+                    "matchNumber": 3,
+                    "scoreRedFinal": 24,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 19,
+                    "scoreBlueFoul": 6,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 1,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1250,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5561,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3098,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5067,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5046,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-06T07:02:51.63",
+                    "description": "Qualification 7",
+                    "level": "Qualification",
+                    "matchNumber": 7,
+                    "scoreRedFinal": 53,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 53,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 4507,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3656,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 217,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 313,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5225,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-06T09:06:51.867",
+                    "description": "Qualification 15",
+                    "level": "Qualification",
+                    "matchNumber": 15,
+                    "scoreRedFinal": 20,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 20,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 503,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 470,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3707,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2619,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5048,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-06T15:22:37.767",
+                    "description": "Qualification 24",
+                    "level": "Qualification",
+                    "matchNumber": 24,
+                    "scoreRedFinal": 52,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 10,
+                    "scoreBlueFinal": 44,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 4819,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1250,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 503,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5662,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1718,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-06T11:06:48.423",
+                    "description": "Qualification 30",
+                    "level": "Qualification",
+                    "matchNumber": 30,
+                    "scoreRedFinal": 16,
+                    "scoreRedFoul": 6,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 32,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 5233,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 313,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3773,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4377,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3414,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-06T11:51:31.847",
+                    "description": "Qualification 36",
+                    "level": "Qualification",
+                    "matchNumber": 36,
+                    "scoreRedFinal": 54,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 122,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 12,
+                    "Teams": [
+                        {
+                            "teamNumber": 1,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5642,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5053,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4377,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1025,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4819,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-06T12:28:44.83",
+                    "description": "Qualification 41",
+                    "level": "Qualification",
+                    "matchNumber": 41,
+                    "scoreRedFinal": 132,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 48,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 1025,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5216,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 308,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4779,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3707,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-06T13:17:23.347",
+                    "description": "Qualification 47",
+                    "level": "Qualification",
+                    "matchNumber": 47,
+                    "scoreRedFinal": 98,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 94,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 1,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5478,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 470,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4737,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5650,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4819,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-06T14:09:39.77",
+                    "description": "Qualification 53",
+                    "level": "Qualification",
+                    "matchNumber": 53,
+                    "scoreRedFinal": 40,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 64,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 6,
+                    "Teams": [
+                        {
+                            "teamNumber": 1,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 308,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4507,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5561,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5650,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5046,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-07T04:34:23.657",
+                    "description": "Qualification 59",
+                    "level": "Qualification",
+                    "matchNumber": 59,
+                    "scoreRedFinal": 132,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 4,
+                    "scoreBlueFinal": 132,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 2619,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 2137,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 217,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1025,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4130,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-07T05:30:23.767",
+                    "description": "Qualification 66",
+                    "level": "Qualification",
+                    "matchNumber": 66,
+                    "scoreRedFinal": 76,
+                    "scoreRedFoul": 0,
+                    "scoreRedAuto": 0,
+                    "scoreBlueFinal": 32,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 4,
+                    "Teams": [
+                        {
+                            "teamNumber": 5650,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 503,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5703,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5067,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 3414,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                },
+                {
+                    "autoStartTime": "2015-03-07T06:12:30.72",
+                    "description": "Qualification 72",
+                    "level": "Qualification",
+                    "matchNumber": 72,
+                    "scoreRedFinal": 131,
+                    "scoreRedFoul": 6,
+                    "scoreRedAuto": 20,
+                    "scoreBlueFinal": 82,
+                    "scoreBlueFoul": 0,
+                    "scoreBlueAuto": 0,
+                    "Teams": [
+                        {
+                            "teamNumber": 2851,
+                            "station": "Red1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 67,
+                            "station": "Red2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 1,
+                            "station": "Red3",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5478,
+                            "station": "Blue1",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 4851,
+                            "station": "Blue2",
+                            "dq": false
+                        },
+                        {
+                            "teamNumber": 5229,
+                            "station": "Blue3",
+                            "dq": false
+                        }
+                    ]
+                }
+            ]
+        },
+        "OHCL": {
+            "event_name": "Buckeye Regional",
+            "raw_stats": {}
+        },
+        "RISMI": {
+            "event_name": "NE District - Rhode Island Event",
+            "raw_stats": {}
+        },
+        "WAAMV": {
+            "event_name": "PNW District - Auburn Mountainview Event",
+            "raw_stats": {},
+            "matches": []
+        },
+        "WASPO": {
+            "event_name": "PNW District - West Valley Event",
+            "raw_stats": {},
+            "matches": []
+        }
+    }
+}

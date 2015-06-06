@@ -3,6 +3,8 @@ var file = require('read-file');
 var auth = file.readFileSync('../authkey.txt');
 var Q = require('q');
 
+//Returns a promise of an object that contains all 
+//of the events that a team has attended
 function getEvents(teamNumber) {
   var deffered = Q.defer();
 
@@ -33,6 +35,9 @@ function getEvents(teamNumber) {
   return deffered.promise;
 }
 
+//Will return an skeleton object that has
+//the events a team attended and a field for 
+//analytics
 function makeSkeleton(teamNumber, parsedEventData) {
   var teamData = {};
   var teamDataPromise = Q.defer();
@@ -46,10 +51,13 @@ function makeSkeleton(teamNumber, parsedEventData) {
     }
   }
 
+
   teamDataPromise.resolve(teamData);
   return teamDataPromise.promise;
 }
 
+//Gets and sets the matches to a team's object and then
+//returns the team object. 
 function populateMatches(teamData, teamNumber, eventCode) {
 
   var teamMatchPromise = Q.defer();
@@ -73,6 +81,8 @@ function populateMatches(teamData, teamNumber, eventCode) {
   //console.log(teamData);
 }
 
+//Returns a promise containing all the matches that 
+//a team has played at during an event
 function getMatches(teamNumber, eventCode) {
   var rawMatches = Q.defer();
 
@@ -103,11 +113,13 @@ function getMatches(teamNumber, eventCode) {
   return rawMatches.promise;
 }
 
+//sets the match data to a particular event
 function storeMatchData(teamData, eventCode, rawMatchesObject) {
   var teamDataPromise = Q.defer();
-  var matches = rawMatchesObject.Matches[0];
+  var matches = rawMatchesObject.Matches;
 
   teamData.events[eventCode].matches = matches;
+  
   //console.log(teamData.events[eventCode].matches === matches);
 
   //console.log(teamData);
@@ -115,6 +127,8 @@ function storeMatchData(teamData, eventCode, rawMatchesObject) {
   return teamDataPromise.promise;
 }
 
+//Gets and sets the scores for team, and then
+//returns a promise containing the team object
 function populateRawScore(teamData, teamNumber, eventCode) {
 
   var teamDataPromise = Q.defer();
@@ -137,6 +151,8 @@ function populateRawScore(teamData, teamNumber, eventCode) {
   //console.log(teamData);
 }
 
+//gets the raw scores for a team at an event and 
+//then returns a promise containing the scores
 function getRawScores(teamNumber, eventCode){
   var rawScoresPromise = Q.defer();
 
@@ -165,6 +181,7 @@ function getRawScores(teamNumber, eventCode){
   return rawScoresPromise.promise;
 }
 
+//sets the raw score data
 function storeScoreData(teamData, eventCode, parsedScoreData) {
   var storeScorePromise = Q.defer();
 
@@ -182,8 +199,12 @@ function storeScoreData(teamData, eventCode, parsedScoreData) {
   return storeScorePromise.promise;
 }
 
+//generates the team object and returns a promise
+//containing an object representing the team
+
 function getTeamObject(teamNumber){
   teamData = {};
+  console.log('getTeamObject called');
   var teamObjectPromise = Q.defer();
 
   var promise = getEvents(teamNumber);
@@ -222,3 +243,19 @@ function getTeamObject(teamNumber){
 
     return teamObjectPromise.promise;
 }
+
+/*
+var promise = getTeamObject(303);
+
+promise
+.then(function(data){
+  console.log(data);
+});
+*/
+
+
+module.exports = {
+  getTeamObject : function(teamNumber){
+    return getTeamObject(teamNumber);
+  }
+};

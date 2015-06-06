@@ -2,8 +2,6 @@ import pygal
 import json
 
 from pygal.style import NeonStyle
-from pprint import pprint
-
 
 def allZero(someArray):
     for num in someArray:
