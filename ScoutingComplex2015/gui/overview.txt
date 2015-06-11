@@ -1,0 +1,8 @@
+Technologies that I want to use: 
+
+ember.js
+
+The goal: To make a web gui that will support and display all of the
+different things in the Scouting System. It is important that the interface
+looks really clean and things can be accessed easily. 
+

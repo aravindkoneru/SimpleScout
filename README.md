@@ -30,6 +30,8 @@ Looking at the code, its obvious that some of these are not used or used very sp
 
 [pygal](http://pygal.org/download/) `pip install pygal`
 
+[naked](https://pypi.python.org/pypi/Naked) `pip install naked`
+
 ##Instructions
 
 Currently still under development, so no solid instructions yet.

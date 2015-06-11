@@ -4,4 +4,6 @@ function write(eventCode){
   lib.makeScoutingFile(eventCode);
 }
 
-write('MRCMP');
+module.exports = {
+	write: write
+};

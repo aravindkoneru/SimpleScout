@@ -1,7 +1,10 @@
 var xlsx = require('xlsx');
 var http = require('http');
 var file = require('read-file');
-var auth = file.readFileSync('../authkey.txt');
+
+var pathname = __dirname.substring(0, __dirname.lastIndexOf('/'));
+
+var auth = file.readFileSync(pathname + '/authkey.txt');
 var mkdirp = require('mkdirp');
 var fs = require('fs');
 
@@ -69,7 +72,7 @@ function generateExcelBook(teamNumbers){
 
 //gets the template scouting sheet
 function getTemplate(){
-  var wb = xlsx.readFile('sample_files/template.xlsx');
+  var wb = xlsx.readFile(__dirname + '/sample_files/template.xlsx');
   var ws = wb.Sheets.Sheet1;
   ws['!cols'] = getCols(ws);
   return ws;
@@ -109,14 +112,14 @@ function createFolders(teamArray){
 
 //given the teamNumber, make the folder to store the JSON
 function makeTeamFolder(teamNumber){
-  mkdirp('../collectedJSON/team_' + teamNumber, function (err) {
+  mkdirp(pathname + '/collectedJSON/team_' + teamNumber, function (err) {
     if (err) console.error(err);
   });
 }
 
 //writes the excel file
 function makeFile(exportBook){
-  xlsx.writeFile(exportBook, 'scouting.xlsx');
+  xlsx.writeFile(exportBook, __dirname + '/scouting.xlsx');
 }
 
 //calls all the other functions to generate the scouting sheet
