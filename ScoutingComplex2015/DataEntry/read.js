@@ -4,6 +4,7 @@ function read(location){
   lib.read(location);
 }
 
-read('sample_files/scouting.xlsx');
-
+module.exports = {
+	read:read
+};
 //

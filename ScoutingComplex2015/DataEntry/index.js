@@ -281,7 +281,7 @@ function genInfoAll(location){
 }
 
 function writeRaw(teamNumber, payload){
-  var outputFilename = '../collectedJSON/team_' + teamNumber + '/payload.json';
+  var outputFilename = pathname + '/collectedJSON/team_' + teamNumber + '/payload.json';
 
   fs.writeFile(outputFilename, JSON.stringify(payload, null, 4), function(err) {
       if(err) {
@@ -320,7 +320,7 @@ function writeDataPoints(teamNumber, teamPayload){
     }
   }
 
-  var outputFilename = '../collectedJSON/team_' + teamNumber + '/dataPoints.json';
+  var outputFilename = pathname + '/collectedJSON/team_' + teamNumber + '/dataPoints.json';
 
   fs.writeFile(outputFilename, JSON.stringify(dataPoints, null, 4), function(err) {
       if(err) {

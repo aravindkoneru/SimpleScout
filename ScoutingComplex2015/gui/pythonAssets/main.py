@@ -3,6 +3,12 @@ from Naked.toolshed.shell import muterun_js
 #Tkinter imports
 from Tkinter import * #ignore error for more imports
 import tkSimpleDialog
+from tkFileDialog import *
+import tkMessageBox
+
+#other imports
+import os
+
 
 #create the splash screen with info
 def splashScreen():
@@ -51,6 +57,19 @@ def generateExcelFile():
   #submitButton = Button(master, text="Generate For Event", width=10, command=getValue)
   #submitButton.pack()
 
+def readExcelFile():
+  fileDirectory = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+  print fileDirectory
+
+  response = muterun_js('../jsAssets/read-excel.js', fileDirectory)
+
+  if(response.exitcode == 0):
+    print 'worked'
+  else:
+    print 'didnt work'
+  #gameData = pickle.load(open(fileName, "rb"))
+  #os.chdir(oldDirectory)
+  #loadGame(gameData)
 
 #main run method that will run the entire application
 def run():
@@ -86,6 +105,10 @@ def run():
   #Add button to generate excel
   generateExcelButton = Button(root, text = "Generate Excel", relief = 'flat', command = generateExcelFile, bg = "#212121", fg = "#E100D4")
   generateExcelButton.place(relx = .39, rely = .5)
+
+  #Add button to read excel
+  readExcelButton = Button(root, text = 'Read Excel', relief = 'flat', command = readExcelFile, bg = "#212121", fg = "#E100D4")
+  readExcelButton.place(relx = .4, rely = .6)
 
 
   #Run the main windows
