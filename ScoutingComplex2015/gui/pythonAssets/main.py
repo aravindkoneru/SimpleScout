@@ -46,7 +46,7 @@ def splashScreen():
 #@TODO: Work from here
 def generateExcelFile():
   eventCode = tkSimpleDialog.askstring(title = "Event Code Entry", prompt = "Enter event code:")
-  response = muterun_js('../jsAssets/write-excel.js', eventCode)
+  response = muterun_js('../jsAssets/writeExcel.js', eventCode)
 
   if(response.exitcode == 0):
     print 'worked'
@@ -61,7 +61,16 @@ def readExcelFile():
   fileDirectory = askopenfilename() # show an "Open" dialog box and return the path to the selected file
   print fileDirectory
 
-  response = muterun_js('../jsAssets/read-excel.js', fileDirectory)
+  folderOfFile = fileDirectory[:fileDirectory.rfind('/')]
+  print folderOfFile
+
+  directoryBeforeChange = os.getcwd()
+
+  os.chdir(folderOfFile)
+
+  response = muterun_js('../jsAssets/read-excel.js', fileDirectory[fileDirectory.rfind('/'):])
+
+  os.chdir(directoryBeforeChange)
 
   if(response.exitcode == 0):
     print 'worked'
