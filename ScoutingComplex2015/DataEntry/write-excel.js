@@ -8,7 +8,6 @@ var auth = file.readFileSync(pathname + '/authkey.txt');
 var mkdirp = require('mkdirp');
 var fs = require('fs');
 
-
 //get all the teams attending an event
 function getTeams(eventCode){
   var options = {

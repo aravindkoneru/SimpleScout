@@ -23,7 +23,7 @@ function getEvents(teamNum) {
       eventInfo = JSON.parse(str);
       getMatchData(eventInfo, teamNum);
     });
-  }
+  };
 
   http.request(options, callback).end();
 }
@@ -53,7 +53,7 @@ function getMatchData(eventInfo, teamNum) {
         var matchInfo = JSON.parse(str);
         getSpecificMatches(matchInfo, teamNum);
       });
-    }
+    };
 
     http.request(options, callback).end();
   }
@@ -74,7 +74,7 @@ function getSpecificMatches(matchData, teamNum) {
   for (var matchNum = 0; matchNum < matchData.length; matchNum++) {
 
     var currentMatchAlliances = matchData[matchNum].alliances;
-    if (currentMatchAlliances['red']['teams'].indexOf(teamNum) >= 0 || currentMatchAlliances['blue']['teams'].indexOf(teamNum) >= 0) {
+    if (currentMatchAlliances.red.teams.indexOf(teamNum) >= 0 || currentMatchAlliances.blue.teams.indexOf(teamNum) >= 0) {
 
       setMatchesGlobal(matchData[matchNum]);
 
@@ -104,34 +104,34 @@ function analyze() {
   for (var matchNum = 0; matchNum < matches.length; matchNum++) {
 
     var currentMatch = matches[matchNum];
-    var currentMatchAlliances = currentMatch['alliances'];
+    var currentMatchAlliances = currentMatch.alliances;
     var alliance = "";
 
-    if (currentMatchAlliances['red']['teams'].indexOf(teamNumber) >= 0) {
+    if (currentMatchAlliances.red.teams.indexOf(teamNumber) >= 0) {
       alliance = "red";
     } else {
       alliance = "blue";
     }
 
-    if (currentMatchAlliances[alliance]['score'] >= 0) {
-      if (currentMatchAlliances[alliance]['score'] > highest) {
-        highest = currentMatchAlliances[alliance]['score'];
+    if (currentMatchAlliances[alliance].score >= 0) {
+      if (currentMatchAlliances[alliance].score > highest) {
+        highest = currentMatchAlliances[alliance].score;
       }
 
-      if (currentMatchAlliances[alliance]['score'] < lowest) {
-        lowest = currentMatchAlliances[alliance]['score'];
+      if (currentMatchAlliances[alliance].score < lowest) {
+        lowest = currentMatchAlliances[alliance].score;
       }
 
       if (currentMatch.comp_level === 'qm') {
-        averageQA += currentMatchAlliances[alliance]['score'];
+        averageQA += currentMatchAlliances[alliance].score;
       } else {
-        averagePlayoff += currentMatchAlliances[alliance]['score'];
+        averagePlayoff += currentMatchAlliances[alliance].score;
         totalPlayoffs++;
       }
 
-      averageAuton += matches[matchNum]['score_breakdown'][alliance]['auto'];
+      averageAuton += matches[matchNum].score_breakdown[alliance].atuo;
 
-      averageFouls += matches[matchNum]['score_breakdown'][alliance]['foul'];
+      averageFouls += matches[matchNum].score_breakdown[alliance].foul;
 
     } else {
       totalNulls++;
@@ -146,7 +146,7 @@ function analyze() {
   averageFouls /= matches.length - totalNulls;
   averageAuton /= matches.length - totalNulls;
 
-  console.log('Analytics')
+  console.log('Analytics');
   console.log('Team Name: ' + teamName);
   console.log("Highest Number of points: " + highest);
   console.log("Lowest Number of points: " + lowest);
@@ -160,7 +160,7 @@ function analyze() {
 function getTeamSeasonData(teamNum) {
   var eventInfo = getEvents(teamNum);
   getTeamName(teamNum);
-  u.delay(analyze, 1000)
+  u.delay(analyze, 1000);
 }
 
 function getSpecificEventMatchData(teamNumb, eventKey) {
@@ -182,7 +182,7 @@ function getSpecificEventMatchData(teamNumb, eventKey) {
       matchInfo = JSON.parse(str);
       getSpecificMatches(matchInfo, teamNumb);
     });
-  }
+  };
 
   http.request(options, callback).end();
 
@@ -213,7 +213,7 @@ function getTeamName(teamNumb) {
       var name = JSON.parse(str);
       setNameGlobal(name.nickname);
     });
-  }
+  };
 
   http.request(options, callback).end();
 }
@@ -226,11 +226,11 @@ function getTeamEventData(teamNumb, eventKey) {
 
 module.exports = {
   getSeasonData: function(teamNumb) {
-    getTeamSeasonData(teamNumb)
+    getTeamSeasonData(teamNumb);
   },
 
   getEventData: function(teamNumb, eventKey) {
     getTeamEventData(teamNumb, eventKey);
   }
 
-}
+};

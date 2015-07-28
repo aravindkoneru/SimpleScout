@@ -1,5 +1,5 @@
 var prompt =require('sync-prompt').prompt;
-var scouting = require('./scouting.js')
+var scouting = require('./scouting.js');
 
 var choice = prompt("event or team?: ");
 
@@ -18,5 +18,5 @@ if(choice === "event"){
   scouting.getSeasonData(teamNumb);
 
 } else{
-  console.log("invalid input. run again.")
+  console.log("invalid input. run again.");
 }
