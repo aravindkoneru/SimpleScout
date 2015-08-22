@@ -66,6 +66,12 @@ it is in its best shape for the 2016 season. The following features are tentativ
 * 5/7/2015: Began working on the graphs and other analytics
 * 5/8/2015: Looking into python for plotting data instead of using node.js (want to locally generate graphs)
 * 5/16/2015: Began working with q promises in order to make the data generation more predictable
+* 8/21/2015: I noticed that FIRST adopted a new 2.0 standard for their api and
+  there are alot of changes with it. There needs to be re-vamp of the current
+scouting code. Since it's late, I'm debating whether to just wait a few months
+and develop the new code for the next game or to update this just for fun. As it
+stands, I'm leaning towards the first option just because of the time it would
+require to change all the api calls to the new standard. 
 
 ##Conclusion/Notes
 Please feel free to contribute and send pull requests. If you have any problems or find

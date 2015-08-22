@@ -1,3 +1,5 @@
+//@TODO: Need to update this so it uses 
+//promises and the new api standard
 var http = require('http');
 var u = require('underscore');
 
@@ -14,7 +16,7 @@ function getEvents(teamNum) {
   callback = function(response) {
     var str = '';
 
-
+    //some comment here
     response.on('data', function(chunk) {
       str += chunk;
     });

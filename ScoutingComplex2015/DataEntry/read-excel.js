@@ -4,6 +4,8 @@ var file = require('read-file');
 var pathname = __dirname.substring(0, __dirname.lastIndexOf('/'));
 var fs = require('fs');
 
+console.log('this is in read');
+console.log(pathname);
 
 var matchSchema = {
   interaction:{

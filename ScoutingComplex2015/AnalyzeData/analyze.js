@@ -6,7 +6,6 @@ function getDataPoints(teamNumber) {
   return obj;
 }
 
-
 //calculates the sample standard deviation
 function calcStDevInt(arrayOfValues) {
 

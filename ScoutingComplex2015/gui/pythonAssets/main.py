@@ -23,7 +23,7 @@ def splashScreen():
   splashCanvas = Canvas(splash, height=500, width=500, bg="#212121", highlightthickness=0)
   splashCanvas.pack()
 
-  #Create logo 
+  #Create logo
   logoImage = PhotoImage(file="../imageAssets/logo.gif")
   imageLabel = Label(splash, image = logoImage, bg = "#212121")
   imageLabel.place(relx = .5, rely = .3, anchor =CENTER)
@@ -59,18 +59,21 @@ def generateExcelFile():
 
 def readExcelFile():
   fileDirectory = askopenfilename() # show an "Open" dialog box and return the path to the selected file
-  print fileDirectory
 
-  folderOfFile = fileDirectory[:fileDirectory.rfind('/')]
+  folderOfFile = fileDirectory[:fileDirectory.rfind("/")]
+
+  print
+
+  print "This is the directory that we need to move to"
   print folderOfFile
 
-  directoryBeforeChange = os.getcwd()
+#save the old directory and then change the working directory to the folder containing the excel file
+  #directoryBeforeChange = os.getcwd()
+ # os.chdir(folderOfFile)
 
-  os.chdir(folderOfFile)
+  response = muterun_js('../jsAssets/read-excel.js', fileDirectory)
 
-  response = muterun_js('../jsAssets/read-excel.js', fileDirectory[fileDirectory.rfind('/'):])
-
-  os.chdir(directoryBeforeChange)
+  #os.chdir(directoryBeforeChange)
 
   if(response.exitcode == 0):
     print 'worked'

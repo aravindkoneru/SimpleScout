@@ -1,3 +1,5 @@
+//@TODO: Need to make everything work with the 2.0 API
+
 var http = require('http');
 var file = require('read-file');
 var auth = file.readFileSync('../authkey.txt');
