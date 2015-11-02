@@ -38,7 +38,7 @@ function getEvents(teamNumber) {
 }
 
 //Will return an skeleton object that has
-//the events a team attended and a field for
+ //the events a team attended and a field for
 //analytics
 function makeSkeleton(teamNumber, parsedEventData) {
   var teamData = {};
