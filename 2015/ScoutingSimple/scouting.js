@@ -1,17 +1,19 @@
-//@TODO: Need to update this so it uses 
+//@TODO: Need to update this so it uses
 //promises and the new api standard
 var http = require('http');
 var u = require('underscore');
 
-//given team number, get all events the team played at
+//igiven team number, get all events the team played at
 function getEvents(teamNum) {
   teamNumber = teamNum;
   var eventInfo;
+
 
   var options = {
     host: 'www.thebluealliance.com',
     path: 'www.thebluealliance.com/api/v2/team/' + teamNum + '/events?X-TBA-App-Id=personal:scouting:v01'
   };
+
 
   callback = function(response) {
     var str = '';
@@ -229,6 +231,7 @@ function getTeamEventData(teamNumb, eventKey) {
 module.exports = {
   getSeasonData: function(teamNumb) {
     getTeamSeasonData(teamNumb);
+    debug("exported teamnumb");
   },
 
   getEventData: function(teamNumb, eventKey) {
