@@ -1,4 +1,6 @@
 # SimpleScout
+
+[![Join the chat at https://gitter.im/aravindkoneru/SimpleScout](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aravindkoneru/SimpleScout?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 An FRC scouting program written in node.js and powered by [The Blue Alliance API](http://www.thebluealliance.com/apidocs) and the [FIRST API](http://docs.frcevents.apiary.io/)
 
 Let's talk:  [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aravindkoneru/SimpleScout?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
